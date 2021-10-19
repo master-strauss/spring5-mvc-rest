@@ -24,15 +24,13 @@ public class CustomerServiceImplTest {
 
     CustomerMapper customerMapper = CustomerMapper.INSTANCE;
 
-    CustomerServiceImpl customerService;
+    CustomerService customerService;
 
     @Before
     public void setUp() throws Exception {
         MockitoAnnotations.initMocks(this);
-        customerService=new CustomerServiceImpl();
-        customerService.setCustomerMapper(customerMapper);
-        customerService.setCustomerRepository(customerRepository);
-       // customerService = new CustomerServiceImpl(customerMapper, customerRepository);
+
+        customerService = new CustomerServiceImpl(customerMapper, customerRepository);
     }
 
     @Test
@@ -123,7 +121,7 @@ public class CustomerServiceImplTest {
 
         Long id = 1L;
 
-        customerService.deleteCustomerById(id);
+        customerRepository.deleteById(id);
 
         verify(customerRepository, times(1)).deleteById(anyLong());
     }
