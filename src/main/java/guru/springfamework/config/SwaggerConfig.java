@@ -24,7 +24,8 @@ public class SwaggerConfig { //} extends WebMvcConfigurationSupport {
                 .build()
                 .pathMapping("/");
     }
-
+    
+// IF NOT ON A SPRING BOOT PROJECT, USE THIS
 //    @Override
 //    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
 //        registry.addResourceHandler("swagger-ui.html")
