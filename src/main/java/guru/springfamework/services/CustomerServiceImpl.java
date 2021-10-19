@@ -18,6 +18,14 @@ public class CustomerServiceImpl implements CustomerService {
 
     private CustomerMapper customerMapper;
     private CustomerRepository customerRepository;
+
+    public CustomerServiceImpl(){}
+    
+    public CustomerServiceImpl(CustomerMapper customerMapper, CustomerRepository customerRepository) {
+        this.customerMapper = customerMapper;
+        this.customerRepository = customerRepository;
+    }
+
     @Autowired
     public void setCustomerMapper(CustomerMapper customerMapper) {
         this.customerMapper = customerMapper;
