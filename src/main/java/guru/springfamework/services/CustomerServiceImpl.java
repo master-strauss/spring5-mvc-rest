@@ -30,9 +30,9 @@ public class CustomerServiceImpl implements CustomerService {
                 .findAll()
                 .stream()
                 .map(customer -> {
-                    CustomerDTO customerDTO = customerMapper.customerToCustomerDTO(customer);
-                    customerDTO.setCustomerUrl(getCustomerUrl(customer.getId()));
-                    return customerDTO;
+                   CustomerDTO customerDTO = customerMapper.customerToCustomerDTO(customer);
+                   customerDTO.setCustomerUrl(getCustomerUrl(customer.getId()));
+                   return customerDTO;
                 })
                 .collect(Collectors.toList());
     }
@@ -47,7 +47,7 @@ public class CustomerServiceImpl implements CustomerService {
                     customerDTO.setCustomerUrl(getCustomerUrl(id));
                     return customerDTO;
                 })
-                .orElseThrow(RuntimeException::new);
+                .orElseThrow(RuntimeException::new); //todo implement better exception handling
     }
 
     @Override
@@ -92,7 +92,7 @@ public class CustomerServiceImpl implements CustomerService {
 
             return returnDto;
 
-        }).orElseThrow(RuntimeException::new);
+        }).orElseThrow(RuntimeException::new); //todo implement better exception handling;
     }
 
     private String getCustomerUrl(Long id) {
