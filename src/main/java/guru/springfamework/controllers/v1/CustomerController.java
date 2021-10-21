@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Created by jt on 9/27/17.
  */
-@Api(description = "This is my Customer Controller")
+@Api(description = "This is my Customer Controller") //CUSTOMIZING ENDPOINTS
 @RestController
 @RequestMapping(CustomerController.BASE_URL)
 public class CustomerController {

@@ -30,7 +30,7 @@ public class SwaggerConfig { //} extends WebMvcConfigurationSupport {
                 .apiInfo(metaData());
     }
 
-    private ApiInfo metaData(){
+    private ApiInfo metaData(){ // METADATA
 
         Contact contact = new Contact("John Thompson", "https://springframework.guru/about/",
                 "john@springfrmework.guru");
@@ -45,6 +45,8 @@ public class SwaggerConfig { //} extends WebMvcConfigurationSupport {
                 "https://www.apache.org/licenses/LICENSE-2.0",
                 new ArrayList<>());
     }
+    
+    // TO ADD OUR OWN RESOURCES IF NOt ON A SPRING BOOT PROJECT
 //    @Override
 //    protected void addResourceHandlers(ResourceHandlerRegistry registry) {
 //        registry.addResourceHandler("swagger-ui.html")
